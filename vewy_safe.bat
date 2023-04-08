@@ -1,0 +1,1 @@
+powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('You twust me so much UwU Dawts weawwy weawwy dangewous cause iwt couwda been a viwus UwU UwU UwU', 'Wuh-Oh', 'Ok', [System.Windows.Forms.MessageBoxIcon]::Warning);}"
