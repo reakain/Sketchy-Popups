@@ -19,3 +19,16 @@ In your C:\Windows\System32\ folder, there is a file called iexpress.exe.
 5. Click next and you should have your .exe!
 
 Just a note, this file actually only acts as a wrapper for your script, and the script itself actually gets executed in a temp folder created on execution (and deleted afterwards), so make sure you don't use any relative paths.
+
+My notes:
+
+iexpress uses .sed file for instructions to make the exe unpacker, which is just a text file you can edit to make things easier.
+
+## And making it even worse
+We can hide extensions using the [right-to-left unicode character](https://unicode-explorer.com/c/202E) to make titles like: “Awesome Song uploaded by (U+202e)3pm.SCR” which then looks like “Awesome Song uploaded by RCS.mp3” as discussed [here](https://www.howtogeek.com/127154/how-hackers-can-disguise-malicious-programs-with-fake-file-extensions/). I tried this out by making "CoolMUS(U+202e)3pm.EXE" to make it read "CoolMUSEXE.mp3", but Windows immediately refused to let me run it in any capacity and within a minute erased the file from my computer.
+
+## Plus some simplification
+We also made a quick one line script to make the exe from the sed file with relative file names, and it works, so that's cool!
+
+## Give it an icon
+So maybe it looks less spooky generic, let's give it a fun icon. There's no easy way to do this with iexpress. Also I want multiple icon sizes, so we'll try [this](https://redketchup.io/icon-editor) to make an icon package from an image. Then we need to use [Resource Hacker](http://www.angusj.com/resourcehacker/) which is far less sketchy than it looks. We open our exe with this, select the Icon folder, and go to Action -> Replace Icon... and then choose to select a new icon. Pick our shiny new .ico file, click replace, then save. It keeps a copy of the exe as _original, which is nice. If the exe doesn't show up with the right ico, it's cause explorer cached it. Run ```ie4uinit.exe -show``` in a cmd window to clear the cache.

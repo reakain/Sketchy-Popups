@@ -24,14 +24,14 @@ SourceFiles=SourceFiles
 InstallPrompt=
 DisplayLicense=
 FinishMessage=
-TargetName=C:\Users\riann\source\Sketchy-Popups\FunTimes.EXE
+TargetName=.\FunTimes.exe
 FriendlyName=FunTimes
-AppLaunched=cmd /c vewy_safe.bat
+AppLaunched=cmd /c sketchy_popup.bat
 PostInstallCmd=<None>
 AdminQuietInstCmd=
 UserQuietInstCmd=
-FILE0="vewy_safe.bat"
+FILE0="sketchy_popup.bat"
 [SourceFiles]
-SourceFiles0=C:\Users\riann\source\Sketchy-Popups\
+SourceFiles0=.\
 [SourceFiles0]
 %FILE0%=
