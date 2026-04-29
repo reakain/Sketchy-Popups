@@ -32,3 +32,7 @@ We also made a quick one line script to make the exe from the sed file with rela
 
 ## Give it an icon
 So maybe it looks less spooky generic, let's give it a fun icon. There's no easy way to do this with iexpress. Also I want multiple icon sizes, so we'll try [this](https://redketchup.io/icon-editor) to make an icon package from an image. Then we need to use [Resource Hacker](http://www.angusj.com/resourcehacker/) which is far less sketchy than it looks. We open our exe with this, select the Icon folder, and go to Action -> Replace Icon... and then choose to select a new icon. Pick our shiny new .ico file, click replace, then save. It keeps a copy of the exe as _original, which is nice. If the exe doesn't show up with the right ico, it's cause explorer cached it. Run ```ie4uinit.exe -show``` in a cmd window to clear the cache.
+
+## Making a Free cup holder
+This one got... Painful! Mostly because I wanted it to let folks know if their machine wasn't compatible with the free cupholder (eject the CD tray).
+Apparently we first use a batch script to then run a bastard child of jscript and wscript like [this](https://superuser.com/a/972502). Then we go ahead and still need to add the pop up. I got the most info from [this](https://stackoverflow.com/a/25925201) writeup, but the main thing is defining the wscript shell, and then assigning your popup like normal. If you want the popup to not have a timeout, you make the timeout -1. Then I also added a quick command for after it pops out the cd tray, so it doesn't trigger the popup if it finds a cd drive.
